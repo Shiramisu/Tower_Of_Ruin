@@ -121,11 +121,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (agent == null || !agent.isOnNavMesh)
-        {
-            Debug.LogWarning("Enemy: NavMeshAgent ist entweder null oder nicht auf einem NavMesh platziert.");
-            return;
-        }
+        // if (agent == null || !agent.isOnNavMesh)
+        // {
+        //     Debug.LogWarning("Enemy: NavMeshAgent ist entweder null oder nicht auf einem NavMesh platziert.");
+        //     return;
+        // }
 
         if (!isDead)
         {

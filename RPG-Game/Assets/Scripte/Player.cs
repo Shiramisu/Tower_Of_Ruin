@@ -95,7 +95,6 @@ public class Player : MonoBehaviour
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
     }
-
     public void TakeDamage(int damage)
     {
         print(damage);
@@ -108,12 +107,10 @@ public class Player : MonoBehaviour
         }
         UpdateHealthSlider();
     }
-
     private void UpdateHealthSlider()
     {
         healthSlider.value = currentHealth;
     }
-
     private void Die()
     {
         playerAnim.SetTrigger("Die");
@@ -121,7 +118,6 @@ public class Player : MonoBehaviour
     }
     private IEnumerator UnBlock()
     {
-        
         doingSomething = true;
         playerAnim.Play("unblock");
         yield return new WaitForSeconds(0.1f);
@@ -136,7 +132,6 @@ public class Player : MonoBehaviour
         playerAnim.Play("block");
         yield return new WaitForSeconds(0.1f);
         isBlocking = true;
-        doingSomething = false;
     }
 
     private void NotifyGameManagerPlayerDied()
@@ -238,8 +233,6 @@ public class Player : MonoBehaviour
             playerRigid.linearVelocity = Vector3.zero;
         }
     }
-
-
     private IEnumerator HandleAttack()
     {
         if (Input.GetMouseButtonDown(0) && Time.time >= lastAttackTime + attackCooldown + 0.1f && !doingSomething)
